@@ -1,0 +1,58 @@
+openapi: 3.0.3
+info:
+  title: E-Commerce API
+  version: 1.0.0
+  description: A basic API for working with an E-Commerce application
+paths:
+  /api/users/register:
+    summary: Register a new user
+    description: >-
+      Requires username, email, and password in the request body. Returns the
+      registered user's details.
+    post:
+      summary: Create a new user
+      description: Creates a new user with username email and password in the database
+      operationId: registerUser
+      responses:
+        default:
+          description: Default error sample response
+          content:
+            application/json:
+              examples:
+                userRegistrationSuccess:
+                  value: |
+                    {
+                      "id": 12345,
+                      "username": "JohnDoe",
+                      "email": "johndoe@example.com",
+                      "createdAt": "2023-09-07T10:00:00Z",
+                      "updatedAt": "2023-09-07T10:00:00Z"
+                    }
+      tags:
+        - Users
+  /api/user/login:
+    summary: Authenticates a user
+    description: >-
+      Requires email and password in the request body. Returns the authenticated
+      user's details without the password.
+    post:
+      summary: Authenticate and login a user
+      description: >-
+        Allows a user to authenticate and login to the system by providing their
+        email and password. If the authentication is successful, the user's
+        details (excluding the password) will be returned. Otherwise, an error
+        message will be provided.
+      operationId: loginUser
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - User Authentication
+  /products:
+    summary: '''Retrieve products by category'
+    description: >-
+      Returns a list of products filtered by category. If no category is
+      provided, returns all products.'
+  '/products/{productID}:':
+    summary: Retrieve a single product by its ID
+    description: Returns detailed information about a product identified by its unique ID
