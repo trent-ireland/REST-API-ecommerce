@@ -1,0 +1,41 @@
+/* Product.css */
+
+.product {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+  }
+  
+  .product__image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .product__name {
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+  }
+  
+  .product__description {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+  
+  .product__price {
+    font-weight: bold;
+  }
+  
+  .product__button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .product__button:hover {
+    background-color: #0056b3;
+  }
+  
