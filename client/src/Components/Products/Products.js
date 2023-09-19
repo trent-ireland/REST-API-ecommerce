@@ -1,8 +1,8 @@
 import React from 'react';
 import './Products.css'
 
-function Product({ product }) {
+function Products({ product }) {
   return 
 }
 
-export default Product;
+export default Products;
