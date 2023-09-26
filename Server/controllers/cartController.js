@@ -1,4 +1,4 @@
-const server = require('../server.js');
+const server = require('./../server');
 
 const db = server;  // Assuming that your server.js exports the database connection or pool
 

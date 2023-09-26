@@ -6,7 +6,11 @@ const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const cartRoutes = require('./routes/cartRoutes');
 const orderRoutes = require('./routes/orderRoutes');
-const db = require('./db'); // Assuming this is where you've set up your pool
+const db = require('./db'); // Importing the database connection pool
+const dotenv = require('dotenv'); // For environment variables
+const cors = require('cors'); // For handling CORS
+
+dotenv.config(); // Load environment variables from a .env file
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -14,11 +18,12 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors()); // Enable CORS for all routes
 
 // Express session middleware
 app.use(
   session({
-    secret: 'secret',
+    secret: process.env.SESSION_SECRET || 'default_secret', // Use environment variable or a default value
     resave: true,
     saveUninitialized: true,
   })
@@ -39,7 +44,14 @@ db.connect((err, client, release) => {
     console.error('Error connecting to the database:', err.stack);
   } else {
     console.log('Connected to the database.');
+    release(); // Release the client back to the pool
   }
+});
+
+// Global error handler
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
 });
 
 // Start the server
