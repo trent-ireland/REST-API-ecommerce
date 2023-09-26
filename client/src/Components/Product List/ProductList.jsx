@@ -26,7 +26,11 @@ const ProductList = () => {
       <ul>
         {products.map((product) => (
           <li key={product.id}>
+            {product.imageurl && <img src={product.imageurl} alt={product.name} style={{ width: '200px', height: '200px' }} />}
+            <br />
             {product.name} - ${product.price}
+            <br />
+           
           </li>
         ))}
       </ul>

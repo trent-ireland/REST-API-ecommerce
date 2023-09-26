@@ -1,7 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
+// Updated fetch URL to use the full path
 export const fetchProducts = createAsyncThunk('api/fetchProducts', async () => {
-  const response = await fetch('/api/products'); // Updated to match the new API endpoint
+  const response = await fetch('http://localhost:3000/api/products');
   if (!response.ok) {
     throw new Error('Failed to fetch products.');
   }
@@ -34,3 +35,4 @@ const apiSlice = createSlice({
 });
 
 export default apiSlice.reducer;
+
