@@ -1,6 +1,7 @@
 const express = require('express');
 const session = require('express-session');
-const passport = require('./Passport')
+const passport = require('passport');
+require('./Passport')(passport);
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const cartRoutes = require('./routes/cartRoutes');
