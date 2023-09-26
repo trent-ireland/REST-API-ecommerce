@@ -1,0 +1,49 @@
+/* ProductList.css */
+
+/* Container styling */
+div {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styling */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* List styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* List item styling */
+li {
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+li:hover {
+    background-color: #e9e9e9;
+}
+
+/* Product name styling */
+h3 {
+    color: #444;
+    margin: 0;
+}
+
+/* Product price styling */
+p {
+    color: #666;
+    margin-top: 5px;
+}

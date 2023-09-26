@@ -7,7 +7,7 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <a href="/" className="logo">
-          Ecommerce App
+          
         </a>
         <nav className="nav">
           <Link to="/" className="nav-link">
@@ -19,7 +19,7 @@ const Header = () => {
           <Link to="/about" className="nav-link">
             About
           </Link>
-          {/* Add more navigation links as needed */}
+        
         </nav>
         <div className="search-bar">
           <input
@@ -27,7 +27,7 @@ const Header = () => {
             placeholder="Search products"
             className="search-input"
           />
-          <button className="search-button">Search</button>
+          <button className="search-button"></button>
         </div>
       </div>
     </header>
