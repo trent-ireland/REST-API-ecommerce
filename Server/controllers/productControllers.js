@@ -1,8 +1,5 @@
-const server = require('./../server');
+const db = require('./../db');
 
-
-
-// Retrieve all products or by category
 const getProducts = async (req, res) => {
     try {
         let products;
@@ -17,7 +14,6 @@ const getProducts = async (req, res) => {
     }
 };
 
-// Retrieve a single product by ID
 const getProductById = async (req, res) => {
     try {
         const product = await db.query('SELECT * FROM products WHERE id = $1', [req.params.productId]);
