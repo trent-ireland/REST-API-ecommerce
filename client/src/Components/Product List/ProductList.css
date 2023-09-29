@@ -1,49 +1,37 @@
 /* ProductList.css */
 
-/* Container styling */
-div {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Heading styling */
-h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-/* List styling */
 ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Increase gap for better spacing */
+  justify-content: center;
 }
 
-/* List item styling */
 li {
-    padding: 15px;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    transition: background-color 0.3s;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
 }
 
 li:hover {
-    background-color: #e9e9e9;
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Product name styling */
-h3 {
-    color: #444;
-    margin: 0;
+img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 10px;
 }
 
-/* Product price styling */
-p {
-    color: #666;
-    margin-top: 5px;
-}

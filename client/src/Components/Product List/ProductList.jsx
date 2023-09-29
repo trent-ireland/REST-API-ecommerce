@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchProducts } from '../../Redux/apiSlice';
+import { fetchProducts } from '../../Redux/ProductSlice';
+import './ProductList.css'
 
 const ProductList = () => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.api.products);
-  const status = useSelector((state) => state.api.status);
-  const error = useSelector((state) => state.api.error);
+  const products = useSelector((state) => state.products.products);
+  const status = useSelector((state) => state.products.status);
+  const error = useSelector((state) => state.products.error);
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -22,7 +23,7 @@ const ProductList = () => {
 
   return (
     <div>
-      <h1>Product List</h1>
+  
       <ul>
         {products.map((product) => (
           <li key={product.id}>

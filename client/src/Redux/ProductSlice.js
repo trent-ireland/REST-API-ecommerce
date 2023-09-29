@@ -10,7 +10,7 @@ export const fetchProducts = createAsyncThunk('api/fetchProducts', async () => {
   return data;
 });
 
-const apiSlice = createSlice({
+const ProductSlice = createSlice({
   name: 'api',
   initialState: {
     products: [],
@@ -34,5 +34,5 @@ const apiSlice = createSlice({
   },
 });
 
-export default apiSlice.reducer;
+export default ProductSlice.reducer;
 
